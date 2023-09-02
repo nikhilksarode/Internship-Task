@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family:'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        #converter {
+            margin: 20px auto;
+            width: 300px;
+            
+        }
+        select, input, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px;
+            
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 90px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+              border: 1px solid;
+              box-shadow: 5px 10px #888888;
+              align-items: center;
+              background-color: #a5c1df;
+    </style>
+</head>
+<body>
+    <div class="login-container">
+    <div id="converter">
+        <h1>Currency Converter</h1>
+        <label for="fromCurrency">From:</label>
+        <select id="fromCurrency"></select>
+        <label for="toCurrency">To:</label>
+        <select id="toCurrency"></select>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+        <p>Result: <span id="result">0.00</span></p>
+        <button id="convert">Convert</button>
+    </div>
+</div>
+
+    <script>
+        // Replace with actual currency exchange rates API
+        const exchangeRates = {
+            "IND": 80,
+            "USD": 1.00,
+            "EUR": 0.85,
+            "GBP": 0.73,
+            "JPY": 110.52
+          
+            // Add more currencies and their exchange rates here
+        };
+
+        const fromCurrency = document.getElementById("fromCurrency");
+        const toCurrency = document.getElementById("toCurrency");
+        const amount = document.getElementById("amount");
+        const result = document.getElementById("result");
+        const convertButton = document.getElementById("convert");
+
+        // Populate currency dropdowns
+        for (const currency in exchangeRates) {
+            const option1 = document.createElement("option");
+            const option2 = document.createElement("option");
+            option1.text = currency;
+            option2.text = currency;
+            fromCurrency.add(option1);
+            toCurrency.add(option2);
+        }
+
+        // Event listener for the Convert button
+        convertButton.addEventListener("click", () => {
+            const from = fromCurrency.value;
+            const to = toCurrency.value;
+            const amountValue = parseFloat(amount.value);
+
+            if (isNaN(amountValue)) {
+                alert("Please enter a valid amount.");
+                return;
+            }
+
+            if (exchangeRates[from] && exchangeRates[to]) {
+                const convertedAmount = (amountValue / exchangeRates[from]) * exchangeRates[to];
+                result.textContent = convertedAmount.toFixed(2);
+            } else {
+                alert("Invalid currency selection.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	
+   td, td {
+  padding: 10px;
+  margin-left: 0%;
+}
+
+table{
+    border: 2px solid rgb(15, 15, 15);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(211, 233, 233);
+
+    border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+h2{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+    #c1{
+        
+        margin: auto;
+        padding: 10px;
+       
+    }
+    #sub{
+        background-color: #007bff;
+    }
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+	</style>
+	<title>Registration Form</title>
+</head>
+<body>
+	<h2>Registration Form</h2>
+	<form id="c1">
+		<table>
+            <tr>
+
+			<td><label for="name">Username:</label></td>
+			<td><input type="text" id="name" name="name" required></td>
+			
+            </tr>
+                <tr>
+
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                    
+                    </tr>   
+                    <tr>
+                        <td> <lable for="Mobile"> Mobile:</lable></td>
+                        <td>
+                            <input type = "tel" placeholder="9845******" required>
+                            </td>
+                        
+                        </tr>
+                        <tr>
+
+                            <td><label for="dob">Date of Birth:</label></td>
+                            <td><input type="date" id="dob" name="dob" required></td>
+                            
+                            </tr>        
+
+                            <tr>
+
+                                <td><label for="gender">Gender:</label></td>
+                                <td><input type="radio" id="male" name="gender" value="male">
+                                    <label for="male">Male</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female">Female</label></td>
+                                
+                                </tr>
+                               <tr>
+                                <td> <label for="password">Password:</label></td>
+                                <td><input type="password" id="password" name="password" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="confirm-password">Confirm Password:</label></td>
+                                <td><input type="password" id="confirm-password" name="confirm-password" required></td>
+                            </tr>
+                
+                            
+                            <th colspan="2"><input type="submit" value="Submit" id="sub"></th>
+        </table>
+	</form>
+</body>
+</html>
